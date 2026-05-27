@@ -6,11 +6,9 @@
 
 /* ─── CONFIG ─────────────────────────────────────────────────── */
 import * as godrej from '../../../lib/config'
-import * as vanantara from '../../../lib/vanantara/config'
 
 const PROJECTS = {
-  [godrej.PROJECT_ID]:    godrej,
-  [vanantara.PROJECT_ID]: vanantara,
+  [godrej.PROJECT_ID]: godrej,
 }
 /* ────────────────────────────────────────────────────────────── */
 
