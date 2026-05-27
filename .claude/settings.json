@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\HP\\\\OneDrive\\\\Desktop\\\\tata88\\\\app\\\\vanantara\" -Confirm:$false)",
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\HP\\\\OneDrive\\\\Desktop\\\\tata88\\\\components\\\\vanantara\" -Confirm:$false)",
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\HP\\\\OneDrive\\\\Desktop\\\\tata88\\\\lib\\\\vanantara\" -Confirm:$false)",
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\HP\\\\OneDrive\\\\Desktop\\\\tata88\\\\public\\\\vanantara\" -Confirm:$false)"
+    ]
+  }
+}

@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
 
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-[80px]">
           <Link href="/" className="flex items-center">
-            <img src="/images/logo/logo.webp" alt="Tata 88 East" className="h-10 sm:h-14 w-auto object-contain" />
+            <img src="/images/logo/logo.png" alt="Tata 88 East" className="h-14 md:h-16 w-auto object-contain" style={{ maxWidth: '220px' }} />
           </Link>
           <Link
             href="/"
@@ -87,15 +87,13 @@ export default function PrivacyPolicy() {
             {/* Intro */}
             <p className="mb-6 sm:mb-8 text-sm sm:text-base" style={{ lineHeight: 1.8, color: '#444', fontFamily: 'var(--font-jost), Jost, sans-serif' }}>
               At{' '}
-              <a
-                href="https://tata88east.in/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/"
                 style={{ color: 'var(--color-gold-dark)', fontWeight: '600', textDecoration: 'underline' }}
                 className="hover:opacity-80 transition-opacity"
               >
                 tata88east.in
-              </a>{' '}
+              </Link>{' '}
               (Authorized Marketing Partner), we respect your privacy and are committed to safeguarding your personal data. This Privacy Policy outlines how we collect, use, and protect your information when you visit our website.
             </p>
 
