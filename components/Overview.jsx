@@ -241,9 +241,9 @@ const Overview = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 
           {/* LEFT: Image */}
-          <div data-aos="fade-right" style={{ display: 'flex' }}>
+          <div data-aos="fade-right" className="lg:self-start" style={{ display: 'flex' }}>
             <div
-              className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[480px]"
+              className="relative w-full aspect-[4/5]"
               style={{
                 borderRadius: '16px', overflow: 'hidden',
                 boxShadow: '0 16px 48px rgba(0,0,0,0.14)',

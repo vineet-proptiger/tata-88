@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -29,6 +29,7 @@ const categories = [
 ]
 
 const Location = () => {
+  const [openIdx, setOpenIdx] = useState(0)
 
   return (
     <section id="location" style={{
@@ -64,63 +65,81 @@ const Location = () => {
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch">
 
-          {/* LEFT — List */}
+          {/* LEFT — Accordion */}
           <div className="w-full lg:w-[40%]" data-aos="fade-right">
             <div style={{
               background: '#fff', borderRadius: '16px',
               boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
               border: '1px solid #f0f0f0', overflow: 'hidden',
-              height: '100%',
-              maxHeight: '420px',
-              overflowY: 'auto',
             }}>
-              {categories.map((cat, i) => (
-                <div key={i} style={{ borderBottom: i < categories.length - 1 ? '1px solid #f5f5f5' : 'none' }}>
-                  
-                  {/* Category Header */}
-                  <div style={{
-                    width: '100%', display: 'flex', alignItems: 'center', padding: '15px 20px',
-                    background: '#f9fafb', borderBottom: '1px solid #f0f0f0'
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{
-                        width: '30px', height: '30px', borderRadius: '8px',
-                        background: 'var(--color-gold-bg)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        color: 'var(--color-gold)', flexShrink: 0,
-                      }}>
-                        {cat.icon}
-                      </span>
-                      <span style={{
-                        fontSize: '14px', fontWeight: '700', fontFamily: F_JOST,
-                        color: '#374151',
-                      }}>{cat.label}</span>
-                    </div>
-                  </div>
+              {categories.map((cat, i) => {
+                const isOpen = openIdx === i
+                return (
+                  <div key={i} style={{ borderBottom: i < categories.length - 1 ? '1px solid #f0f0f0' : 'none' }}>
 
-                  {/* Category Items */}
-                  <div style={{ padding: '10px 20px 16px 20px', background: '#fff' }}>
-                    {cat.items.map((item, j) => (
-                      <div key={j} style={{
-                        display: 'flex', alignItems: 'flex-start', gap: '10px',
-                        padding: '6px 0',
-                        borderBottom: j < cat.items.length - 1 ? '1px dashed #f0f0f0' : 'none',
-                      }}>
+                    {/* Accordion Header */}
+                    <button
+                      onClick={() => setOpenIdx(isOpen ? null : i)}
+                      style={{
+                        width: '100%', display: 'flex', alignItems: 'center',
+                        justifyContent: 'space-between', padding: '15px 20px',
+                        background: isOpen ? 'var(--color-gold-bg)' : '#f9fafb',
+                        border: 'none', cursor: 'pointer',
+                        transition: 'background 0.2s',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <span style={{
-                          width: '6px', height: '6px', borderRadius: '50%',
-                          background: 'var(--color-gold)', flexShrink: 0, marginTop: '6px',
-                        }} />
-                        <span style={{
-                          fontSize: '13px', color: '#4b5563',
-                          fontFamily: F_SANS, lineHeight: 1.6, fontWeight: '500'
+                          width: '30px', height: '30px', borderRadius: '8px',
+                          background: isOpen ? 'var(--color-gold)' : 'var(--color-gold-bg)',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          color: isOpen ? '#fff' : 'var(--color-gold)', flexShrink: 0,
+                          transition: 'background 0.2s, color 0.2s',
                         }}>
-                          {item}
+                          {cat.icon}
                         </span>
+                        <span style={{
+                          fontSize: '14px', fontWeight: '700', fontFamily: F_JOST,
+                          color: isOpen ? 'var(--color-gold)' : '#374151',
+                          transition: 'color 0.2s',
+                        }}>{cat.label}</span>
                       </div>
-                    ))}
+                      <svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke={isOpen ? 'var(--color-gold)' : '#9ca3af'}
+                        strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.25s' }}
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+
+                    {/* Accordion Body */}
+                    {isOpen && (
+                      <div style={{ padding: '10px 20px 16px 20px', background: '#fff' }}>
+                        {cat.items.map((item, j) => (
+                          <div key={j} style={{
+                            display: 'flex', alignItems: 'flex-start', gap: '10px',
+                            padding: '6px 0',
+                            borderBottom: j < cat.items.length - 1 ? '1px dashed #f0f0f0' : 'none',
+                          }}>
+                            <span style={{
+                              width: '6px', height: '6px', borderRadius: '50%',
+                              background: 'var(--color-gold)', flexShrink: 0, marginTop: '6px',
+                            }} />
+                            <span style={{
+                              fontSize: '13px', color: '#4b5563',
+                              fontFamily: F_SANS, lineHeight: 1.6, fontWeight: '500'
+                            }}>
+                              {item}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 

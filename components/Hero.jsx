@@ -22,11 +22,11 @@ const Hero = ({ setIsOpen }) => {
       <div className="flex flex-col lg:flex-row">
 
         {/* LEFT — Image Carousel */}
-        <div className="w-full lg:w-[62%] relative h-[250px] sm:h-[350px] lg:h-auto lg:min-h-[calc(100vh-82px)]"
+        <div className="w-full lg:w-[62%] relative h-[320px] sm:h-[460px] lg:h-auto lg:min-h-[calc(100vh-82px)]"
           data-aos="fade-right">
 
-          {/* Carousel — outline draws 10px inside, not clipped by overflow-hidden */}
-          <div className="overflow-hidden" style={{ position: 'absolute', inset: 0, border: '5px solid var(--color-gold)', zIndex: 1, borderRadius: '10px' }}>
+          {/* Carousel */}
+          <div className="overflow-hidden" style={{ position: 'absolute', inset: 0, border: '4px solid var(--color-gold)', zIndex: 1, borderRadius: '10px' }}>
             <div
               className="flex h-full"
               style={{
@@ -38,7 +38,7 @@ const Hero = ({ setIsOpen }) => {
             >
               {slides.map((src, idx) => (
                 <div key={idx} style={{ width: `${100 / slides.length}%`, flexShrink: 0, position: 'relative' }}>
-                  <Image src={src} alt={`Tata 88 East ${idx + 1}`} fill className="object-cover"
+                  <Image src={src} alt={`Tata 88 East ${idx + 1}`} fill className="object-cover object-top"
                     priority={idx === 0} sizes="(max-width: 1024px) 100vw, 62vw" />
                 </div>
               ))}

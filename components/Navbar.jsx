@@ -18,10 +18,10 @@ const navLinks = [
 /* ── Inline SVG Logo ─────────────────────────────────────────── */
 const ProjectLogo = () => (
   <img
-    src="/images/logo/logo.webp"
+    src="/images/logo/logo.png"
     alt="Tata 88 East"
-    className="h-10 md:h-12 w-auto object-contain transition-all"
-    style={{ maxWidth: '180px' }}
+    className="h-14 md:h-16 w-auto object-contain transition-all"
+    style={{ maxWidth: '220px' }}
   />
 )
 
