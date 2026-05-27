@@ -21,7 +21,7 @@ const Footer = () => (
       {/* RERA Section */}
       <div style={{ borderTop: '1px solid #222', padding: '24px 0', marginBottom: '8px' }}>
         <p style={{ fontSize: '14px', color: 'var(--color-gold)', fontFamily: F_SANS, fontWeight: '600' }} data-aos="fade-in">
-          Project RERA NO.: Coming Soon (Subject to official approvals)
+          Project RERA NO.: HIRA/P/KOL/2019/000383
         </p>
       </div>
     </div>

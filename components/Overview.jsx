@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../lib/config'
-import { buildTrackingFields, isGclidBlocked, saveGclid } from '../lib/formMeta'
+import { buildTrackingFields, saveGclid } from '../lib/formMeta'
 import { overviewImage } from '../lib/images'
 import Link from 'next/link'
 
@@ -37,13 +37,6 @@ const EarlyForm = () => {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
   const [focused, setFocused] = useState('')
-  const [alreadySubmitted, setAlreadySubmitted] = useState(false)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (localStorage.getItem('_lsub_done') === '1' || isGclidBlocked())) {
-      setAlreadySubmitted(true)
-    }
-  }, [])
 
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
@@ -67,7 +60,7 @@ const EarlyForm = () => {
       const res = await fetch(API_ENDPOINT, { method: 'POST', body: payload })
       const data = await res.json()
       if (data.status) {
-        if (typeof window !== 'undefined') { localStorage.setItem('_lsub_done', '1'); saveGclid() }
+        if (typeof window !== 'undefined') { saveGclid() }
         setSuccess(true)
         if (typeof window !== 'undefined') {
           window.dataLayer = window.dataLayer || []
@@ -182,23 +175,12 @@ const EarlyForm = () => {
       </label>
 
       {/* Submit */}
-      <button type="submit" disabled={loading || alreadySubmitted} className="btn-gold"
-        style={{ width: '100%', padding: '13px', fontSize: '13px', letterSpacing: '0.08em', opacity: alreadySubmitted ? 0.55 : 1, cursor: alreadySubmitted ? 'not-allowed' : 'pointer' }}>
-        {alreadySubmitted ? (
-          <>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-            Already Submitted
-          </>
-        ) : (
-          <>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-            {loading ? 'Submitting...' : 'Book Now'}
-          </>
-        )}
+      <button type="submit" disabled={loading} className="btn-gold"
+        style={{ width: '100%', padding: '13px', fontSize: '13px', letterSpacing: '0.08em' }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+        {loading ? 'Submitting...' : 'Book Now'}
       </button>
     </form>
   )

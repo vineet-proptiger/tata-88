@@ -1,7 +1,7 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../lib/config'
-import { buildTrackingFields, isGclidBlocked, saveGclid } from '../lib/formMeta'
+import { buildTrackingFields, saveGclid } from '../lib/formMeta'
 import Link from 'next/link'
 
 const GOLD = 'var(--color-gold)'
@@ -17,11 +17,6 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
   const [error, setError] = useState('')
   const honeypotRef = useRef(null)
 
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (localStorage.getItem('_lsub_done') === '1' || isGclidBlocked())) {
-      setSuccess(true)
-    }
-  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -34,11 +29,6 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
 
     /* ── Honeypot check (client-side) ── */
     if (honeypotRef.current?.value !== '') { setSuccess(true); return }
-
-    /* ── Duplicate submission check ── */
-    if (typeof window !== 'undefined') {
-      if (localStorage.getItem('_lsub_done') === '1' || isGclidBlocked()) { setSuccess(true); return }
-    }
 
     setError(''); setLoading(true)
     const tracking = buildTrackingFields('', null)
@@ -60,7 +50,6 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
       if (data.status) {
         setSuccess(true)
         if (typeof window !== 'undefined') {
-          localStorage.setItem('_lsub_done', '1')
           saveGclid()
           window.dataLayer = window.dataLayer || []
           const nameParts = formData.fullname.trim().split(' ')

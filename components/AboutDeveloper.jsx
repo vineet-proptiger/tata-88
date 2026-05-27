@@ -1,8 +1,8 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../lib/config'
-import { buildTrackingFields, isGclidBlocked, saveGclid } from '../lib/formMeta'
+import { buildTrackingFields, saveGclid } from '../lib/formMeta'
 
 const GOLD = 'var(--color-gold)'
 const GOLD_DARK = 'var(--color-gold-dark)'
@@ -15,13 +15,6 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
-  const [alreadySubmitted, setAlreadySubmitted] = useState(false)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (localStorage.getItem('_lsub_done') === '1' || isGclidBlocked())) {
-      setAlreadySubmitted(true)
-    }
-  }, [])
 
   const handle = (e) => {
     const { name, value } = e.target
@@ -48,7 +41,7 @@ const ContactForm = () => {
       const res = await fetch(API_ENDPOINT, { method: 'POST', body: payload })
       const data = await res.json()
       if (data.status) {
-        if (typeof window !== 'undefined') { localStorage.setItem('_lsub_done', '1'); saveGclid() }
+        if (typeof window !== 'undefined') { saveGclid() }
         setSuccess(true)
         if (typeof window !== 'undefined') {
           window.dataLayer = window.dataLayer || []
@@ -121,24 +114,13 @@ const ContactForm = () => {
         </span>
       </label>
 
-      <button type="submit" disabled={loading || alreadySubmitted}
+      <button type="submit" disabled={loading}
         className="btn-gold w-full"
-        style={{ padding: '14px', marginTop: '4px', opacity: alreadySubmitted ? 0.55 : 1, cursor: alreadySubmitted ? 'not-allowed' : 'pointer' }}>
-        {alreadySubmitted ? (
-          <>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-            Already Submitted
-          </>
-        ) : (
-          <>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-            {loading ? 'Submitting...' : 'Submit Details'}
-          </>
-        )}
+        style={{ padding: '14px', marginTop: '4px' }}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+        {loading ? 'Submitting...' : 'Submit Details'}
       </button>
     </form>
   )
