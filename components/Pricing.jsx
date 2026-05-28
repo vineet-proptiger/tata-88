@@ -8,7 +8,7 @@ const units = [
   {
     type: "3 BHK",
     size: "1216 - 1727 sq.ft",
-    price: "₹ 4.49 Cr* Onwards",
+    price: "₹ 4.99 Cr* Onwards",
     oldPrice: null,
     btnText: "Enquire Now",
     features: [

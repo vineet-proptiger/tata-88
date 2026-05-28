@@ -132,7 +132,7 @@ const Hero = ({ setIsOpen }) => {
               {[
                 '43 Storey Exclusive High-Rise Tower',
                 'Only 176 Premium Apartments',
-                '3 Bed Residences from ₹4.49 Cr*',
+                '3 Bed Residences from ₹4.99 Cr*',
               ].map((tag, i) => (
                 <p key={i} style={{
                   fontFamily: F_JOST, fontSize: '14px',
@@ -215,7 +215,7 @@ const Hero = ({ setIsOpen }) => {
                     fontFamily: F_JOST,
                     lineHeight: 1,
                   }}>
-                    ₹ 4.49 Cr* Onwards
+                    ₹ 4.99 Cr* Onwards
                   </span>
                 </div>
               </div>
@@ -233,7 +233,7 @@ const Hero = ({ setIsOpen }) => {
 
             {/* ── CTA Button ── */}
             <button onClick={() => setIsOpen(true)}
-              className="btn-primary"
+              className="btn-gold"
               style={{ width: '100%', padding: '14px', fontSize: '14px', letterSpacing: '0.1em' }}
               data-aos="fade-up" data-aos-delay="600">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"

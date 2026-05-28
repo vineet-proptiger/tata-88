@@ -33,7 +33,7 @@ const nephilm = localFont({
 
 export const metadata = {
   title: 'Tata 88 East Alipore Kolkata | 3 BHK Luxury Residences by Tata Housing',
-  description: 'Explore Tata 88 East in Alipore, Kolkata. The tallest residential tower with panoramic views of Hooghly River & Victoria Memorial. 3 BHK residences from ₹4.49 Cr*.',
+  description: 'Explore Tata 88 East in Alipore, Kolkata. The tallest residential tower with panoramic views of Hooghly River & Victoria Memorial. 3 BHK residences from ₹4.99 Cr*.',
   icons: {
     icon: [
       { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
                 "@id": "https://www.tata88east.in/"
               },
               "headline": "Tata 88 East Alipore Kolkata | 3 BHK Luxury Residences by Tata Housing",
-              "description": "Explore Tata 88 East in Alipore, Kolkata. The tallest residential tower with panoramic views of Hooghly River & Victoria Memorial. 3 BHK residences from ₹4.49 Cr*.",
+              "description": "Explore Tata 88 East in Alipore, Kolkata. The tallest residential tower with panoramic views of Hooghly River & Victoria Memorial. 3 BHK residences from ₹4.99 Cr*.",
               "image": "https://www.tata88east.in/_next/image?url=%2Fimages%2Fhero%2Fbanner.webp&w=1200&q=75",
               "author": {
                 "@type": "Organization",
