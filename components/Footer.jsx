@@ -13,7 +13,7 @@ const Footer = () => (
       <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: F_JOST, marginBottom: '24px', letterSpacing: '0.05em' }} data-aos="fade-in">
         Tata Housing
       </h2>
-      <p style={{ fontSize: '14.5px', color: '#ccc', fontFamily: F_SANS, lineHeight: 1.8, maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}
+      <p style={{ fontSize: '14.5px', color: '#ccc', fontFamily: F_SANS, lineHeight: 1.8, maxWidth: '900px', margin: '0 auto', textAlign: 'justify' }}
         data-aos="fade-in" data-aos-delay="100">
         Tata Housing Development Company is one of India's most respected real estate developers, backed by the legacy of the Tata Group. Known for its commitment to quality, innovation, and customer-centricity, Tata Housing has delivered landmark residential and commercial projects across major cities including Mumbai, Pune, Bangalore, Kolkata, Gurgaon, and Chennai. The company is driven by a vision to provide world-class living experiences with a focus on sustainability, superior construction, and modern amenities. With decades of trust, Tata Housing continues to set new benchmarks in luxury, affordable, and premium housing segments across India. Project RERA NO.: HIRA/P/KOL/2019/000383.
       </p>
