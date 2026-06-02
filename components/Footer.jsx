@@ -23,10 +23,10 @@ const Footer = () => (
     <div className="border-t border-[#222] max-w-[1200px] mx-auto py-8 px-8">
       
       {/* Copyright & Privacy Policy */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 text-center sm:text-left">
-        <p style={{ fontSize: '14px', color: '#999', fontFamily: F_SANS }}>
+      <div className="flex justify-center sm:justify-end mb-8">
+        {/* <p style={{ fontSize: '14px', color: '#999', fontFamily: F_SANS }}>
           &copy; 2026 Tata 88 East. All rights reserved.
-        </p>
+        </p> */}
         <Link href="/privacy-policy" style={{ fontSize: '14px', color: '#3b82f6', fontFamily: F_SANS, transition: 'color 0.2s' }} className="hover:text-blue-400">
           Privacy Policy
         </Link>
