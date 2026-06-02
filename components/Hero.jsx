@@ -91,14 +91,14 @@ const Hero = ({ setIsOpen }) => {
             {/* ── Project Identity ── */}
             <div style={{ textAlign: 'center', paddingBottom: '10px', borderBottom: '1px solid #f0f0f0' }}>
               {/* Brand accent */}
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '6px' }}>
+              {/* <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '6px' }}>
                 <span style={{
                   display: 'inline-block', padding: '3px 14px',
                   background: 'var(--color-gold)', borderRadius: '4px',
                   fontSize: '10px', fontWeight: '700', color: '#fff',
                   fontFamily: F_JOST, letterSpacing: '0.12em', textTransform: 'uppercase',
                 }}>New Launch</span>
-              </div>
+              </div> */}
               <h1 style={{
                 fontFamily: F_JOST, fontWeight: '700', fontSize: '26px',
                 color: 'var(--color-primary)', lineHeight: 1.2, margin: '0 0 4px',

@@ -13,27 +13,31 @@ const Footer = () => (
       <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: F_JOST, marginBottom: '24px', letterSpacing: '0.05em' }} data-aos="fade-in">
         Tata Housing
       </h2>
-      <p style={{ fontSize: '14.5px', color: '#ccc', fontFamily: F_SANS, lineHeight: 1.8, marginBottom: '48px', maxWidth: '900px', margin: '0 auto 48px', textAlign: 'justify' }}
+      <p style={{ fontSize: '14.5px', color: '#ccc', fontFamily: F_SANS, lineHeight: 1.8, maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}
         data-aos="fade-in" data-aos-delay="100">
-        Tata Housing Development Company is one of India's most respected real estate developers, backed by the legacy of the Tata Group. Known for its commitment to quality, innovation, and customer-centricity, Tata Housing has delivered landmark residential and commercial projects across major cities including Mumbai, Pune, Bangalore, Kolkata, Gurgaon, and Chennai. The company is driven by a vision to provide world-class living experiences with a focus on sustainability, superior construction, and modern amenities. With decades of trust, Tata Housing continues to set new benchmarks in luxury, affordable, and premium housing segments across India.
+        Tata Housing Development Company is one of India's most respected real estate developers, backed by the legacy of the Tata Group. Known for its commitment to quality, innovation, and customer-centricity, Tata Housing has delivered landmark residential and commercial projects across major cities including Mumbai, Pune, Bangalore, Kolkata, Gurgaon, and Chennai. The company is driven by a vision to provide world-class living experiences with a focus on sustainability, superior construction, and modern amenities. With decades of trust, Tata Housing continues to set new benchmarks in luxury, affordable, and premium housing segments across India. Project RERA NO.: HIRA/P/KOL/2019/000383.
       </p>
-
-      {/* RERA Section */}
-      <div style={{ borderTop: '1px solid #222', padding: '24px 0', marginBottom: '8px' }}>
-        <p style={{ fontSize: '14px', color: 'var(--color-gold)', fontFamily: F_SANS, fontWeight: '600' }} data-aos="fade-in">
-          Project RERA NO.: HIRA/P/KOL/2019/000383
-        </p>
-      </div>
     </div>
 
-    {/* Bottom Bar */}
-    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-8 px-8 border-t border-[#222] max-w-[1200px] mx-auto text-center sm:text-left">
-      <p style={{ fontSize: '14px', color: '#999', fontFamily: F_SANS }}>
-        &copy; 2026 Tata 88 East. All rights reserved
-      </p>
-      <Link href="/privacy-policy" style={{ fontSize: '14px', color: '#3b82f6', fontFamily: F_SANS, transition: 'color 0.2s' }} className="hover:text-blue-400">
-        Privacy Policy
-      </Link>
+    {/* Bottom Bar Container */}
+    <div className="border-t border-[#222] max-w-[1200px] mx-auto py-8 px-8">
+      
+      {/* Copyright & Privacy Policy */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 text-center sm:text-left">
+        <p style={{ fontSize: '14px', color: '#999', fontFamily: F_SANS }}>
+          &copy; 2026 Tata 88 East. All rights reserved.
+        </p>
+        <Link href="/privacy-policy" style={{ fontSize: '14px', color: '#3b82f6', fontFamily: F_SANS, transition: 'color 0.2s' }} className="hover:text-blue-400">
+          Privacy Policy
+        </Link>
+      </div>
+
+      {/* Disclaimer Section */}
+      <div style={{ textAlign: 'left' }}>
+        <p style={{ fontSize: '11px', color: '#888', fontFamily: F_SANS, lineHeight: 1.6 }} data-aos="fade-in">
+          <strong style={{ color: '#bbb' }}>Disclaimer:</strong> This is not the official website of the developer. The information depicted herein, including master plans, floor plans, furniture layout, fittings, illustrations, specifications, designs, dimensions, rendered views, colours, amenities and facilities etc., are subject to change without notification as may be required by the relevant authorities or the Developer's architect. This advertisement is an invitation to offer and shall not be construed as an offer or contract. * Prices subject to change without notice. All taxes extra as applicable.
+        </p>
+      </div>
     </div>
   </footer>
 )
