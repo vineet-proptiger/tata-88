@@ -200,7 +200,7 @@ const Hero = ({ setIsOpen }) => {
             }} data-aos="fade-up" data-aos-delay="500">
               <div style={{ textAlign: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
-                  <span className="text-[16px] sm:text-[20px]" style={{
+                  {/* <span className="text-[16px] sm:text-[20px]" style={{
                     fontWeight: '600',
                     color: '#9ca3af',
                     textDecoration: 'line-through',
@@ -208,7 +208,7 @@ const Hero = ({ setIsOpen }) => {
                     lineHeight: 1,
                   }}>
                     ₹ 5.49 Cr*
-                  </span>
+                  </span> */}
                   <span className="blink-price text-[20px] sm:text-[28px]" style={{
                     fontWeight: '700',
                     color: 'var(--color-gold)',
