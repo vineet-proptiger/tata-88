@@ -180,12 +180,25 @@ const Hero = ({ setIsOpen }) => {
               ))}
             </div>
 
-            {/* ── Apartment Type ── */}
-            <div style={{ textAlign: 'center' }} data-aos="fade-up" data-aos-delay="450">
+            {/* ── Apartment Type (Offer Ribbon) ── */}
+            <div style={{
+              background: 'linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%)',
+              padding: '12px 16px',
+              textAlign: 'center',
+              margin: '8px 0',
+              borderRadius: '4px',
+              boxShadow: '0 4px 12px rgba(181, 135, 40, 0.3)',
+              position: 'relative'
+            }} data-aos="fade-up" data-aos-delay="450">
               <p style={{
-                fontFamily: F_JOST, fontSize: '14px', fontWeight: '700',
-                color: 'var(--color-primary)', margin: '0',
-                letterSpacing: '0.01em',
+                fontFamily: F_JOST,
+                fontSize: '13px',
+                fontWeight: '800',
+                color: '#fff',
+                margin: '0',
+                letterSpacing: '0.04em',
+                lineHeight: 1.45,
+                textShadow: '0 1px 2px rgba(0,0,0,0.2)'
               }}>
                 READY TO MOVE IN RESIDENCES NOW COMES WITH AN ASSURED RENTAL BENEFIT
               </p>
