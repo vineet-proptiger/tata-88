@@ -183,11 +183,11 @@ const Hero = ({ setIsOpen }) => {
             {/* ── Apartment Type ── */}
             <div style={{ textAlign: 'center' }} data-aos="fade-up" data-aos-delay="450">
               <p style={{
-                fontFamily: F_JOST, fontSize: '16px', fontWeight: '700',
+                fontFamily: F_JOST, fontSize: '14px', fontWeight: '700',
                 color: 'var(--color-primary)', margin: '0',
                 letterSpacing: '0.01em',
               }}>
-                3 BHK Luxury Apartments Starts
+                READY TO MOVE IN RESIDENCES NOW COMES WITH AN ASSURED RENTAL BENEFIT
               </p>
             </div>
 
