@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${openSans.variable} ${montserrat.variable} ${cormorant.variable} ${nephilm.variable} font-sans text-dark antialiased`}>
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({ 'city': '${CITY_DISPLAY}' });
 function gtag(){dataLayer.push(arguments);}

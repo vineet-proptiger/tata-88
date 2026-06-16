@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compress: true,
+  productionBrowserSourceMaps: false,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   webpack: (config, { dev }) => {
     if (dev) config.cache = false
     return config

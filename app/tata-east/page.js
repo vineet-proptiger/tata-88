@@ -1,25 +1,24 @@
-import { ModalProvider } from '../components/tata-east/ModalContext'
-import EnquireButton from '../components/tata-east/EnquireButton'
+import { ModalProvider } from '../../components/tata-east/ModalContext'
+import EnquireButton from '../../components/tata-east/EnquireButton'
 import dynamic from 'next/dynamic'
-import './tata-east/tata-east.css'
 
-import Navbar from '../components/tata-east/Navbar'
-import Hero from '../components/tata-east/Hero'
+import Navbar from '../../components/tata-east/Navbar'
+import Hero from '../../components/tata-east/Hero'
 
-import Overview from '../components/tata-east/Overview'
-import Highlights from '../components/tata-east/Highlights'
-import Amenities from '../components/tata-east/Amenities'
-import Pricing from '../components/tata-east/Pricing'
-import Location from '../components/tata-east/Location'
-import MasterPlan from '../components/tata-east/MasterPlan'
-import AboutDeveloper from '../components/tata-east/AboutDeveloper'
-import QuickChat from '../components/tata-east/QuickChat'
-import Footer from '../components/tata-east/Footer'
+import Overview from '../../components/tata-east/Overview'
+import Highlights from '../../components/tata-east/Highlights'
+import Amenities from '../../components/tata-east/Amenities'
+import Pricing from '../../components/tata-east/Pricing'
+import Location from '../../components/tata-east/Location'
+import MasterPlan from '../../components/tata-east/MasterPlan'
+import AboutDeveloper from '../../components/tata-east/AboutDeveloper'
+import QuickChat from '../../components/tata-east/QuickChat'
+import Footer from '../../components/tata-east/Footer'
 
-const Gallery = dynamic(() => import('../components/tata-east/Gallery'), { ssr: false })
-const CarouselSection = dynamic(() => import('../components/tata-east/CarouselSection'), { ssr: false })
-const EnquireModal = dynamic(() => import('../components/tata-east/EnquireModal'), { ssr: false })
-const AosInit = dynamic(() => import('../components/tata-east/AosInit'), { ssr: false })
+const Gallery = dynamic(() => import('../../components/tata-east/Gallery'), { ssr: false })
+const CarouselSection = dynamic(() => import('../../components/tata-east/CarouselSection'), { ssr: false })
+const EnquireModal = dynamic(() => import('../../components/tata-east/EnquireModal'), { ssr: false })
+const AosInit = dynamic(() => import('../../components/tata-east/AosInit'), { ssr: false })
 
 export default function Home() {
   return (
