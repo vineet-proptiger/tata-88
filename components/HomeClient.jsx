@@ -27,9 +27,9 @@ export default function HomeClient() {
       <Navbar setIsOpen={setIsOpen} />
       <Hero setIsOpen={setIsOpen} />
       <Overview setIsOpen={setIsOpen} />
-      <Highlights setIsOpen={setIsOpen} />
       <Gallery setIsOpen={setIsOpen} />
       <Amenities setIsOpen={setIsOpen} />
+      <Highlights setIsOpen={setIsOpen} />
       <Pricing setIsOpen={setIsOpen} />
       <Location />
       <MasterPlan setIsOpen={setIsOpen} />
