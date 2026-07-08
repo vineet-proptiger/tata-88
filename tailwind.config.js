@@ -63,6 +63,14 @@ module.exports = {
           '0%': { backgroundPosition: '-200% center' },
           '100%': { backgroundPosition: '200% center' },
         },
+        ring: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '10%': { transform: 'rotate(15deg)' },
+          '20%': { transform: 'rotate(-10deg)' },
+          '30%': { transform: 'rotate(15deg)' },
+          '40%': { transform: 'rotate(-10deg)' },
+          '50%': { transform: 'rotate(0deg)' },
+        },
       },
       animation: {
         priceBtn: 'priceBtn 4s ease infinite',
@@ -70,6 +78,7 @@ module.exports = {
         fadeUp: 'fadeUp 0.7s ease forwards',
         pulseGlow: 'pulseGlow 2s ease-in-out infinite',
         shimmer: 'shimmer 2.5s linear infinite',
+        ring: 'ring 2s ease-in-out infinite',
       },
     },
   },
